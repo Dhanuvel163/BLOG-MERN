@@ -1,5 +1,4 @@
-import React,{Component,useState} from 'react';
-import {Link,Route,Router,useHistory} from 'react-router-dom';
+import React,{Component} from 'react';
 import {isloggedin,isuserloggedin,islawyerloggedin} from '../service/userservice';
 import {
     Collapse,
@@ -9,11 +8,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
   } from 'reactstrap';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ThumbsUpDownRoundedIcon from "@material-ui/icons/ThumbsUpDownRounded";
@@ -114,33 +108,23 @@ toggle(){
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                            <VpnKeyIcon style={{marginRight:4,fontSize:20}}/>Login
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem href="/user/login">
-                                        User Login
-                                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-
-                        <UncontrolledDropdown nav inNavbar >
-                            <DropdownToggle nav caret>
-                                <GroupAddIcon style={{marginRight:4,fontSize:20}}/>
-                                Signup
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem divider />
-                                <DropdownItem href="/user/signup">
-                                        User Signup                                
-                                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-                    </Nav>
 
                     <Nav className="ml-auto" navbar>
+                        {
+                            !isloggedin()
+                            &&
+                            <>
+                                <NavItem>
+                                    <NavLink href="/user/login"><VpnKeyIcon style={{marginRight:4,fontSize:20}}/>Login</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="/user/login">
+                                        <GroupAddIcon style={{marginRight:4,fontSize:20}}/>
+                                        Signup
+                                    </NavLink>
+                                </NavItem>
+                            </>
+                        }
                         <ADDCASEDATA />
                         <USERDATA user={this.props.userdata}/>
                         <Mycases/>
