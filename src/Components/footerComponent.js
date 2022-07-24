@@ -1,15 +1,9 @@
 import React,{Component} from 'react';
 import {
-    NavItem,
     NavLink,
-    NavbarText
   } from 'reactstrap';
 
 class Footer extends Component{
-    constructor(props){
-        super(props);
-    }
-
     render(){
         return(
             <div className='bg-dark'>

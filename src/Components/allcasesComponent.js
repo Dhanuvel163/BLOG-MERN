@@ -1,10 +1,8 @@
 import React,{Component} from 'react';
-import {Container, Button, FormGroup, Label, Input, FormText,Row,Col,Media,Card,CardHeader,CardBody,CardTitle,CardText } from 'reactstrap';
-import {Control,Errors,Form,actions} from 'react-redux-form';
+import {Card,CardHeader,CardBody,CardTitle,CardText } from 'reactstrap';
 import ReactLoading from 'react-loading';
 import DataUsageRoundedIcon from '@material-ui/icons/DataUsageRounded';
-
-import {islawyerloggedin,isuserloggedin,isloggedin} from '../service/userservice';
+import {isloggedin} from '../service/userservice';
 
 function Cardprofile(props){
     // const acceptHandler=(id)=>{
@@ -19,13 +17,13 @@ function Cardprofile(props){
                  {props.casedata.title}
                 </CardHeader>
                 <CardBody>
+                    <CardText>
+                        <img src={props.casedata.image} alt="" style={{width:'200px',height:'200px',borderRadius:20,boxShadow:'box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;'}}/>
+                    </CardText>
                     <CardTitle>
                         <span className="text-warning" style={{fontWeight:'bold'}}></span>
                         {props.casedata.body}
                     </CardTitle>
-                    <CardText>
-                        <img src={props.casedata.image} style={{width:'80%',marginLeft:'10%',marginRight:'10%',borderRadius:10}}/>
-                    </CardText>
                     {/* <Button onClick={()=>acceptHandler(props.casedata._id)} color="primary">ACCEPT</Button> */}
                 </CardBody>
             </Card>

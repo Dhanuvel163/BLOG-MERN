@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from "react";
 import {
   Container,
@@ -26,10 +27,10 @@ const required = (val) => val && val.length;
 const minLength = (len) => (val) => val && val.length >= len;
 const maxLength = (len) => (val) => val && val.length <= len;
 const isNumber = (val) => !isNaN(Number(val));
-const isemail = (val) =>
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    val
-  );
+// const isemail = (val) =>
+//   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+//     val
+//   );
 
 function Cardprofile(props) {
   if (isloggedin() && islawyerloggedin()) {

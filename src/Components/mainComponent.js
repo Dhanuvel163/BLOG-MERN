@@ -19,8 +19,7 @@ import {
     postusercase,
     fetchusercases,
     fetchallcases,
-    postaccept,
-    fetchlawyers} from '../shared/actionCreators'
+    postaccept,} from '../shared/actionCreators'
 import {actions} from 'react-redux-form';
 
 const mapStateToProps=state=>{
@@ -54,9 +53,6 @@ const mapDispatchToProps=dispatch=>({
 
 
 class Main extends Component{
-    constructor(props){
-        super(props);
-    }
 
     componentDidMount(){
         // this.props.fetchlawyers();

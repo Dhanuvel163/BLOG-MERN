@@ -1,17 +1,15 @@
+/* eslint-disable react/jsx-pascal-case */
 import React,{Component} from 'react';
 import {
     Container
   } from 'reactstrap';
-import { Button, Form, FormGroup, Label, Input, FormText,Row,Col,Media } from 'reactstrap';
+import { Button, FormGroup, Label, Row,Col,Media } from 'reactstrap';
 import {Control,LocalForm,Errors} from 'react-redux-form';
 
 const required=(val)=>(val)&&(val.length)
-const isemail=(val)=>/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)
+const isemail=(val)=>/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)
 
 class Userlogin extends Component{
-    constructor(props){
-        super(props);
-    }
 
     handlesubmit(values){
         this.props.postusersignin(values.email,values.password);
@@ -72,7 +70,7 @@ class Userlogin extends Component{
                     </Row>
                     <hr></hr>
                     <h5 style={{textAlign:'center'}}>OR</h5>
-                    <a  style={{color:'white',display:'flex',justifyContent:'center'}}>
+                    <a href='javascript;' style={{color:'white',display:'flex',justifyContent:'center'}}>
                         <Button href='/user/signup' color='warning'size="md">Click here to Signup</Button>
                     </a>
                 </Container>

@@ -1,16 +1,16 @@
+/* eslint-disable react/jsx-pascal-case */
 import React,{Component} from 'react';
 import {
     Container
   } from 'reactstrap';
-import { Button, Form, FormGroup,FormFeedback, Label, Input, FormText,Row,Col,Media } from 'reactstrap';
+import { Button,  FormGroup, Label, Row,Col,Media } from 'reactstrap';
 import {Control,LocalForm,Errors} from 'react-redux-form';
-import Icon from '@material-ui/core/Icon';
 
 const required=(val)=>(val)&&(val.length)
 const minLength=(len)=>(val)=>(val)&&(val.length>=len)
 const maxLength=(len)=>(val)=>(val)&&(val.length<=len)
 const isNumber=(val)=>!isNaN(Number(val))
-const isemail=(val)=>/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)
+const isemail=(val)=>/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)
 
 class Usersignup extends Component{
     constructor(props){

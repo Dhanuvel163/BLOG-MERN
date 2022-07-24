@@ -2,17 +2,12 @@ import React, { Component } from "react";
 import {
   Card,
   CardBody,
-  CardHeader,
   CardTitle,
-  CardText,
   Button,
 } from "reactstrap";
 import ThumbsUpDownRoundedIcon from "@material-ui/icons/ThumbsUpDownRounded";
 import ArrowRightRoundedIcon from "@material-ui/icons/ArrowRightRounded";
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
